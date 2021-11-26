@@ -49,17 +49,18 @@ final class Guess {
             // keeps track of how many attempts the user has done
             totalTries = totalTries + 1;
 
+            // instance of random class
+            int max = 6;
+            int min = 1;
+
+            // generate random value from 1-6
+            int randNum = (int)Math.floor(Math.random()*(max-min+1)+min);
+            System.out.println(randNum);
+
             // infinite loop until the break statement when correct
             while (LOOP_COUNTER > 0) {
 
-                // instance of random class
-                int max = 6;
-                int min = 1;
-
-                int randNum = (int)Math.floor(Math.random()*(max-min+1)+min);
-                // generate random value from 1-6
-
-                System.out.print("Enter an integer between 1-6: ");
+                System.out.print("\nEnter an integer between 1-6: ");
 
                 // stores user input
                 int userInput = input.nextInt();
@@ -72,15 +73,15 @@ final class Guess {
 
                 // if the user guesses too big
                 } else if (userInput > 6) {
-                    System.out.println("Your integer is too large! This won't count.");
+                    System.out.println("\nYour integer is too large! This won't count.");
 
                 // if the user guesses too small
                 } else if (userInput < 1) {
-                    System.out.println("Your integer is too small! This won't count.");
+                    System.out.println("\nYour integer is too small! This won't count.");
 
                 // if the user is wrong
                 } else {
-                    System.out.println("You are wrong. Try again!");
+                    System.out.println("\nYou are wrong. Try again!");
                     totalTries = totalTries + 1;
                 }
 
@@ -90,11 +91,10 @@ final class Guess {
         } catch (java.util.InputMismatchException errorCode) {
 
             System.out.println("\nYou have not entered a valid input.");
-
         }
 
         // done
-        System.out.println("\nDone.");
+        System.out.println("\n\nDone.");
     }
 }
 
