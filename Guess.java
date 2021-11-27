@@ -8,7 +8,6 @@
 */
 
 import java.util.Scanner;
-import java.util.Random;
 
 /**
 * This is the "Guess"  program.
@@ -19,6 +18,11 @@ final class Guess {
     * Loop number.
     */
     public static final double LOOP_COUNTER = 1.0;
+
+    /**
+    * Six.
+    */
+    public static final double SIX = 6;
 
     /**
     * Prevent instantiation.
@@ -50,11 +54,11 @@ final class Guess {
             totalTries = totalTries + 1;
 
             // instance of random class
-            int max = 6;
+            int max = SIX;
             int min = 1;
 
             // generate random value from 1-6
-            int randNum = (int)Math.floor(Math.random()*(max-min+1)+min);
+            int randNum = (int)Math.floor(Math.random() * (max - min + 1) + min);
             System.out.println(randNum);
 
             // infinite loop until the break statement when correct
@@ -67,17 +71,19 @@ final class Guess {
 
                 // if the user gets it right
                 if (userInput == randNum) {
-                    System.out.print("\nYou have entered the correct answer! It took you "
-                        + totalTries + " tries!");
+                    System.out.print("\nYou have entered the correct answer!");
+                    System.out.println("It took you " + totalTries + " tries!");
                     break;
 
                 // if the user guesses too big
                 } else if (userInput > 6) {
-                    System.out.println("\nYour integer is too large! This won't count.");
+                    System.out.print("\nYour integer is too large!");
+                    System.out.println("This won't count.");
 
                 // if the user guesses too small
                 } else if (userInput < 1) {
-                    System.out.println("\nYour integer is too small! This won't count.");
+                    System.out.print("\nYour integer is too small!");
+                    System.out.println("This won't count.");
 
                 // if the user is wrong
                 } else {
