@@ -22,7 +22,7 @@ final class Guess {
     /**
     * Six.
     */
-    public static final double SIX = 6;
+    public static final int SIX = 6;
 
     /**
     * Prevent instantiation.
@@ -58,7 +58,8 @@ final class Guess {
             int min = 1;
 
             // generate random value from 1-6
-            int randNum = (int)Math.floor(Math.random() * (max - min + 1) + min);
+            int randNum
+                = (int) Math.floor(Math.random() * (max - min + 1) + min);
             System.out.println(randNum);
 
             // infinite loop until the break statement when correct
@@ -76,7 +77,7 @@ final class Guess {
                     break;
 
                 // if the user guesses too big
-                } else if (userInput > 6) {
+                } else if (userInput > SIX) {
                     System.out.print("\nYour integer is too large!");
                     System.out.println("This won't count.");
 
